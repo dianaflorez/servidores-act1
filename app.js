@@ -30,7 +30,7 @@ app.get("/employees", (req, res) => {
       employees = data;
     }
 
-    res.json(employees);
+    res.status(200).json(employees);
 });
 
 // Ruta GET para obtener el empleado más viejo
@@ -43,7 +43,7 @@ app.get('/employees/oldest', (req, res) => {
         }
     }
 
-    return res.json(oldestEmployee);
+    return res.status(200).json(oldestEmployee);
 });
 
 app.post('/employees', (req, res) => {
@@ -59,7 +59,7 @@ app.post('/employees', (req, res) => {
   // Añadir el nuevo empleado al array en memoria
   data.push(newEmployee);
 
-  return res.json(data);
+  return res.status(200).json(data);
   
 });
 
